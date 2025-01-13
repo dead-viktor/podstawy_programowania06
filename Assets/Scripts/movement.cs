@@ -36,7 +36,19 @@ public class movement : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        score++;
-        Debug.Log("Zebrane punkty:" + score);
+        if (collision.gameObject.tag == "Coins")
+        {
+            score++;
+            Debug.Log("Zebrane punkty:" + score);
+        }
+
+        if (collision.gameObject.tag == "Obstacles")
+        {
+            Destroy(gameObject);
+        }
+
     }
+
+
+
 }
